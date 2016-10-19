@@ -52,24 +52,25 @@ function str_arraycheck_change() {
 };
 
 function generateStringCode() {
-    str_code.innerHTML = "bool hiba = false;\n\
+	if (_("str_arraycheck").checked) {
+		str_code.innerHTML = "bool hiba = false;\n\
 do {\n\
     cout << \""+_("str_premsg").value+"\" << endl;\n\
-    cout << endl;\n\
     cin >> "+_("str_varname").value+";\n\
-    hiba = true;\n";
-    if (_("str_arraycheck").checked) {
-        str_code.innerHTML += "    for (int i = 0; i < "+_("str_arraymax").value+"; i++) {\n\
+    hiba = true;\n\
+    for (int i = 0; i < "+_("str_arraymax").value+"; i++) {\n\
         if ("+_("str_arrayname").value+"[i] == "+_("str_varname").value+") {\n\
             hiba = false;\n\
             break;\n\
         }\n\
-    }\n";
-    }
-    str_code.innerHTML += "    if (hiba) {\n\
+    }\n\
+    if (hiba) {\n\
         cout << \""+_("str_errmsg").value+"\" << endl;\n\
     }\n\
 } while (hiba);";
+	} else {
+		str_code.innerHTML = "cout << \""+_("str_premsg").value+"\" << endl;\ncin >> "+_("str_varname").value+";";
+	}
     if (_("str_cerr").checked) {
         _("str_code").innerHTML = replaceAll("cout", "cerr", _("str_code").innerHTML);
     }

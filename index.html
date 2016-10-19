@@ -23,11 +23,11 @@
                 <div class="tabcnt" data-tab-name="string bekérdezés">
                     <input type="text" placeholder="Eredményt tároló változó neve" id="str_varname" />
                     <input type="text" placeholder="Változót kérő üzenet" id="str_premsg" />
-                    <input type="text" placeholder="Hibás bemenet esetén kiírt üzenet" id="str_errmsg" />
                     <input type="checkbox" id="str_arraycheck" value="True" onchange="str_arraycheck_change()" /> <span class="jsbts" onclick="_('str_arraycheck').checked = !_('str_arraycheck').checked; str_arraycheck_change();">Ellenőrizze, hogy egy tömb elemei között szerepel e a bemenet?</span><br>
                     <div id="str_arraydata" class="hidden">
                         <input type="text" placeholder="Tömb változó neve" id="str_arrayname" />
                         <input type="text" placeholder="Tömb hossza (változó VAGY egy egész szám)" id="str_arraymax" />
+						<input type="text" placeholder="Hibás bemenet esetén kiírt üzenet" id="str_errmsg" />
                     </div>
                     <input type="checkbox" id="str_cerr" value="True" /> <span class="jsbts" onclick="_('str_cerr').checked = !_('str_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
                     <button onclick="generateStringCode()">Kód létrehozása</button>
