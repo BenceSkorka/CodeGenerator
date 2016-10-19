@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'MagdaCleanMono-Regular';
+  src: url('MagdaCleanMono-Regular.eot?#iefix') format('embedded-opentype'),  url('MagdaCleanMono-Regular.otf')  format('opentype'),
+	     url('MagdaCleanMono-Regular.woff') format('woff'), url('MagdaCleanMono-Regular.ttf')  format('truetype'), url('MagdaCleanMono-Regular.svg#MagdaCleanMono-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

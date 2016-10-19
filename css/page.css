@@ -1,0 +1,106 @@
+@import url('../font/styles.css');
+
+html, body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #0B61A4;
+    font-family: "MagdaCleanMono-Regular";
+    color: #66A3D2;
+}
+.content {
+    position: absolute;
+    width: calc(100% - 60px);
+    min-width: 1000px;
+    height: auto;
+    padding: 10px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.tabbox {
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+}
+.tabhead {
+    width: 100%;
+    height: auto;
+}
+.tabbtn {
+    width: auto;
+    height: auto;
+    padding: 15px;
+    display: inline-block;
+    border: 2px solid black;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    cursor: pointer;
+}
+.tabbtn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.tabbtn.selected {
+    border-bottom: 2px solid #094E83;
+}
+.hidden {
+    display: none;
+}
+.tabcnt {
+    margin-top: -2px;
+    border: 2px solid black;
+    //border-top: none;
+    padding: 5px;
+}
+.jsbts {
+    cursor: pointer;
+}
+input[type="text"], input[type="number"], select {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px;
+    height: auto;
+    padding: 4px;
+    background-color: #3F92D2;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+
+input[type="text"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #033E6B;
+}
+input[type="text"]::-moz-placeholder, input[type="number"]::-webkit-input-placeholder { /* Firefox 19+ */
+  color: #033E6B;
+}
+input[type="text"]:-ms-input-placeholder, input[type="number"]::-webkit-input-placeholder { /* IE 10+ */
+  color: #033E6B;
+}
+input[type="text"]:-moz-placeholder, input[type="number"]::-webkit-input-placeholder { /* Firefox 18- */
+  color: #033E6B;
+}
+textarea {
+    display: block;
+    width: 100%;
+    height: 250px;
+    background-color: #3F92D2;
+    border: none;
+}
+button {
+    display: block;
+    width: auto;
+    margin: 10px;
+    height: auto;
+    padding: 4px;
+    background-color: #3F92D2;
+    border: 1px solid gray;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #094E83;
+}

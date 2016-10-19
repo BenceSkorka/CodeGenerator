@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>C++ kód generátor</title>
+        <meta charset="UTF-8" />
+        
+        <link rel="stylesheet" type="text/css" href="css/page.css" />
+        
+        <script src="js/jquery-3.1.1.min.js" type="application/javascript"></script>
+        <script src="js/gen.js" type="application/javascript"></script>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Kódgenerátor</h1>
+            <div class="tabbox">
+                <div class="tabcnt" data-tab-name="Üdvözlet">
+                    Te is unod már a repepatív input készítést a háziban?<br>
+                    Ugyanazt a kódot írod újra meg újra?<br>
+                    Szeretnél gyorsan túlesni az egészen?<br>
+                    Akkor ez a kódgenerátor pont neked való! Válassz egy lehetőséget a felső menüben, és generálj magadnak olyan input bekérdő kódot, amely még inputot is ellenőriz!
+                </div>
+                <div class="tabcnt" data-tab-name="string bekérdezés">
+                    <input type="text" placeholder="Eredményt tároló változó neve" id="str_varname" />
+                    <input type="text" placeholder="Változót kérő üzenet" id="str_premsg" />
+                    <input type="text" placeholder="Hibás bemenet esetén kiírt üzenet" id="str_errmsg" />
+                    <input type="checkbox" id="str_arraycheck" value="True" onchange="str_arraycheck_change()" /> <span class="jsbts" onclick="_('str_arraycheck').checked = !_('str_arraycheck').checked; str_arraycheck_change();">Ellenőrizze, hogy egy tömb elemei között szerepel e a bemenet?</span><br>
+                    <div id="str_arraydata" class="hidden">
+                        <input type="text" placeholder="Tömb változó neve" id="str_arrayname" />
+                        <input type="text" placeholder="Tömb hossza (változó VAGY egy egész szám)" id="str_arraymax" />
+                    </div>
+                    <input type="checkbox" id="str_cerr" value="True" /> <span class="jsbts" onclick="_('str_cerr').checked = !_('str_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
+                    <button onclick="generateStringCode()">Kód létrehozása</button>
+                    <textarea id="str_code" readonly></textarea>
+                </div>
+                <div class="tabcnt" data-tab-name="int bekérdezés">
+                    <input type="text" placeholder="Eredményt tároló változó neve" id="int_varname" />
+                    <input type="text" placeholder="Változót kérő üzenet" id="int_premsg" />
+                    <input type="text" placeholder="Hibás bemenet esetén kiírt üzenet" id="int_errmsg" />
+                    <input type="text" placeholder="Maximális érték (változó VAGY egy egész szám) (üresen hagyva: nincs max érték)" id="int_val_max" />
+                    <input type="text" placeholder="Minimális érték (változó VAGY egy egész szám) (üresen hagyva: nincs min érték)" id="int_val_min" />
+                    <input type="checkbox" id="int_cerr" value="True" /> <span class="jsbts" onclick="_('int_cerr').checked = !_('int_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
+                    <button onclick="generateIntCode()">Kód létrehozása</button>
+                    <textarea id="int_code" readonly></textarea>
+                </div>
+                <div class="tabcnt" data-tab-name="Tömb generátor">
+                    <input type="text" placeholder="Tömb neve" id="arr_varname" />
+                    <input type="number" placeholder="Tömb hossza" id="arr_length" />
+                    <select id="arr_type">
+                        <option value="none">Ne töltse fel</option>
+                        <option value="zero">Feltöltés 0 -val</option>
+                        <option value="incr">Feltöltés növekvő számokkal 0 -val kezdve</option>
+                        <option value="days">A hét napjai</option>
+                        <option value="months">A hónapok</option>
+                    </select>
+                    <button onclick="generateArrCode()">Kód létrehozása</button>
+                    <textarea id="arr_code" readonly></textarea>
+                </div>
+                <div class="tabcnt" data-tab-name="int bekérdezés tömbbe">
+                    <input type="text" placeholder="Eredményt tároló tömb neve" id="intarr_varname" />
+                    <input type="text" placeholder="Tömb hossza (változó VAGY egy egész szám)" id="intarr_arrlng" />
+                    <input type="text" placeholder="Változót kérő üzenet (a jelenlegi sorszám a {sorszam} beírásával kapható meg)" id="intarr_premsg" />
+                    <input type="text" placeholder="Hibás bemenet esetén kiírt üzenet" id="intarr_errmsg" />
+                    <input type="text" placeholder="Maximális érték (változó VAGY egy egész szám) (üresen hagyva: nincs max érték)" id="intarr_val_max" />
+                    <input type="text" placeholder="Minimális érték (változó VAGY egy egész szám) (üresen hagyva: nincs min érték)" id="intarr_val_min" />
+                    <input type="checkbox" id="intarr_cerr" value="True" /> <span class="jsbts" onclick="_('intarr_cerr').checked = !_('intarr_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
+                    <button onclick="generateIntArrCode()">Kód létrehozása</button>
+                    <textarea id="intarr_code" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
