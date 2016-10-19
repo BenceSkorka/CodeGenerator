@@ -127,7 +127,7 @@ function generateArrCode() {
         arr_code.innerHTML += "}";
     }
     if (_("arr_type").value == "days") {
-        arr_code.innerHTML = "cost string "+_("arr_varname").value+"[7] = " + '{"hetfo", "kedd", "szerda", "csutortok", "pentek", "szombat", "vasarnap"}';
+        arr_code.innerHTML = "const string "+_("arr_varname").value+"[7] = " + '{"hetfo", "kedd", "szerda", "csutortok", "pentek", "szombat", "vasarnap"}';
     }
     if (_("arr_type").value == "months") {
         arr_code.innerHTML = "const string "+_("arr_varname").value+"[12] = " + '{"januar", "februar", "marcius", "aprilis", "majus", "junius", "julius", "augusztus", "szeptember", "oktober", "november", "december"}';
