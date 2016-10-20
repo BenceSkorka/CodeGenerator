@@ -9,6 +9,9 @@
         <script src="js/gen.js" type="application/javascript"></script>
         
         <script async defer src="https://buttons.github.io/buttons.js"></script>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
     </head>
     <body>
         <div class="content">
@@ -28,10 +31,12 @@
                         <input type="text" placeholder="Tömb változó neve" id="str_arrayname" />
                         <input type="text" placeholder="Tömb hossza (változó VAGY egy egész szám)" id="str_arraymax" />
 						<input type="text" placeholder="Hibás bemenet esetén kiírt üzenet" id="str_errmsg" />
+						<input type="checkbox" id="str_arrayprint" value="True" /> <span class="jsbts" onclick="_('str_arrayprint').checked = !_('str_arrayprint').checked;">Kiírja e a lehetőségeket?</span><br>
+						<input type="checkbox" id="str_returnint" value="True" /> <span class="jsbts" onclick="_('str_returnint').checked = !_('str_returnint').checked;">A tömbben lévő sorszámot adja vissza, ne a beírt szöveget</span><br>
                     </div>
                     <input type="checkbox" id="str_cerr" value="True" /> <span class="jsbts" onclick="_('str_cerr').checked = !_('str_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
                     <button onclick="generateStringCode()">Kód létrehozása</button>
-                    <textarea id="str_code" readonly></textarea>
+                    <pre><code id="str_code" class="hljs cpp"></code></pre>
                 </div>
                 <div class="tabcnt" data-tab-name="int bekérdezés">
                     <input type="text" placeholder="Eredményt tároló változó neve" id="int_varname" />
@@ -41,7 +46,7 @@
                     <input type="text" placeholder="Minimális érték (változó VAGY egy egész szám) (üresen hagyva: nincs min érték)" id="int_val_min" />
                     <input type="checkbox" id="int_cerr" value="True" /> <span class="jsbts" onclick="_('int_cerr').checked = !_('int_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
                     <button onclick="generateIntCode()">Kód létrehozása</button>
-                    <textarea id="int_code" readonly></textarea>
+					<pre><code id="int_code" class="hljs cpp"></code></pre>
                 </div>
                 <div class="tabcnt" data-tab-name="Tömb generátor">
                     <input type="text" placeholder="Tömb neve" id="arr_varname" />
@@ -54,7 +59,7 @@
                         <option value="months">A hónapok</option>
                     </select>
                     <button onclick="generateArrCode()">Kód létrehozása</button>
-                    <textarea id="arr_code" readonly></textarea>
+					<pre><code id="arr_code" class="hljs cpp"></code></pre>
                 </div>
                 <div class="tabcnt" data-tab-name="int bekérdezés tömbbe">
                     <input type="text" placeholder="Eredményt tároló tömb neve" id="intarr_varname" />
@@ -65,7 +70,7 @@
                     <input type="text" placeholder="Minimális érték (változó VAGY egy egész szám) (üresen hagyva: nincs min érték)" id="intarr_val_min" />
                     <input type="checkbox" id="intarr_cerr" value="True" /> <span class="jsbts" onclick="_('intarr_cerr').checked = !_('intarr_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
                     <button onclick="generateIntArrCode()">Kód létrehozása</button>
-                    <textarea id="intarr_code" readonly></textarea>
+					<pre><code id="intarr_code" class="hljs cpp"></code></pre>
                 </div>
             </div>
 			<br>

@@ -55,16 +55,36 @@ function generateStringCode() {
 	if (_("str_arraycheck").checked) {
 		str_code.innerHTML = "bool hiba = false;\n\
 do {\n\
-    cout << \""+_("str_premsg").value+"\" << endl;\n\
-    cin >> "+_("str_varname").value+";\n\
+    cout << \""+_("str_premsg").value+"\" << endl;\n";
+	if (_("str_arrayprint").checked) {
+		str_code.innerHTML += "    cout << \"Elfogadott bemeneti ertekek: \";\n\
+    for (int i = 0; i < "+_("str_arraymax").value+"; i++) {\n\
+        cout << "+_("str_arrayname").value+"[i] << \" \";\n\
+    }\n\
+    cout << endl;\n";
+	}
+	if (_("str_returnint").checked) {
+    str_code.innerHTML += "    string beolvas;\n\
+    cin >> beolvas;\n\
+    hiba = true;\n\
+    for (int i = 0; i < "+_("str_arraymax").value+"; i++) {\n\
+        if ("+_("str_arrayname").value+"[i] == beolvas) {\n\
+            "+_("str_varname").value+" = i;\n\
+            hiba = false;\n\
+            break;\n\
+        }\n\
+    }\n";
+	} else {
+    str_code.innerHTML += "    cin >> "+_("str_varname").value+";\n\
     hiba = true;\n\
     for (int i = 0; i < "+_("str_arraymax").value+"; i++) {\n\
         if ("+_("str_arrayname").value+"[i] == "+_("str_varname").value+") {\n\
             hiba = false;\n\
             break;\n\
         }\n\
-    }\n\
-    if (hiba) {\n\
+    }\n";
+	}
+    str_code.innerHTML += "    if (hiba) {\n\
         cout << \""+_("str_errmsg").value+"\" << endl;\n\
     }\n\
 } while (hiba);";
@@ -74,6 +94,9 @@ do {\n\
     if (_("str_cerr").checked) {
         _("str_code").innerHTML = replaceAll("cout", "cerr", _("str_code").innerHTML);
     }
+	$('pre code').each(function(i, block) {
+		hljs.highlightBlock(block);
+	});
 }
 function generateIntCode() {
     int_code.innerHTML = "bool hiba = false;\n\
@@ -99,6 +122,9 @@ do {\n\
     if (_("int_cerr").checked) {
         _("int_code").innerHTML = replaceAll("cout", "cerr", _("int_code").innerHTML);
     }
+	$('pre code').each(function(i, block) {
+		hljs.highlightBlock(block);
+	});
 }
 
 function generateArrCode() {
@@ -114,7 +140,7 @@ function generateArrCode() {
                  arr_code.innerHTML += ", ";
              }
         }
-        arr_code.innerHTML += "}";
+        arr_code.innerHTML += "};";
     }
     if (_("arr_type").value == "incr") {
         arr_code.innerHTML += "{";
@@ -124,14 +150,17 @@ function generateArrCode() {
                  arr_code.innerHTML += ", ";
              }
         }
-        arr_code.innerHTML += "}";
+        arr_code.innerHTML += "};";
     }
     if (_("arr_type").value == "days") {
-        arr_code.innerHTML = "const string "+_("arr_varname").value+"[7] = " + '{"hetfo", "kedd", "szerda", "csutortok", "pentek", "szombat", "vasarnap"}';
+        arr_code.innerHTML = "const string "+_("arr_varname").value+"[7] = " + '{"hetfo", "kedd", "szerda", "csutortok", "pentek", "szombat", "vasarnap"};';
     }
     if (_("arr_type").value == "months") {
-        arr_code.innerHTML = "const string "+_("arr_varname").value+"[12] = " + '{"januar", "februar", "marcius", "aprilis", "majus", "junius", "julius", "augusztus", "szeptember", "oktober", "november", "december"}';
+        arr_code.innerHTML = "const string "+_("arr_varname").value+"[12] = " + '{"januar", "februar", "marcius", "aprilis", "majus", "junius", "julius", "augusztus", "szeptember", "oktober", "november", "december"};';
     }
+	$('pre code').each(function(i, block) {
+		hljs.highlightBlock(block);
+	});
 }
 
 function generateIntArrCode() {
