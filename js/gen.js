@@ -103,9 +103,7 @@ function generateIntCode() {
 do {\n\
     cout << \""+_("int_premsg").value+"\" << endl;\n\
     cin >> "+_("int_varname").value+";\n\
-    hiba = cin.fail();\n\
-    cin.clear();\n\
-    cin.ignore(1000, '\\n');\n";
+    hiba = cin.fail();\n";
     if (_("int_val_max").value == "" && _("int_val_min").value != "") {
         int_code.innerHTML += "    if (!hiba) {\n        if ("+_("int_varname").value+" < "+_("int_val_min").value+") {\n            hiba = true;\n        }\n    }\n";
     }
@@ -116,6 +114,8 @@ do {\n\
         int_code.innerHTML += "    if (!hiba) {\n        if (("+_("int_varname").value+" < "+_("int_val_min").value+") || ("+_("int_varname").value+" > "+_("int_val_max").value+")) {\n            hiba = true;\n        }\n    }\n";
     }
     int_code.innerHTML += "    if (hiba) {\n\
+        cin.clear();\n\
+        cin.ignore(1000, '\\n');\n\
         cout << \""+_("int_errmsg").value+"\" << endl;\n\
     }\n\
 } while (hiba);";
@@ -169,9 +169,7 @@ for (int i = 0; i < "+_("intarr_arrlng").value+"; i++) {\n\
     do {\n\
         cout << \""+_("intarr_premsg").value+"\" << endl;\n\
         cin >> "+_("intarr_varname").value+"[i];\n\
-        hiba = cin.fail();\n\
-        cin.clear();\n\
-        cin.ignore(1000, '\\n');\n";
+        hiba = cin.fail();\n";
     if (_("intarr_val_max").value == "" && _("intarr_val_min").value != "") {
         intarr_code.innerHTML += "        if (!hiba) {\n            if ("+_("intarr_varname").value+"[i] < "+_("intarr_val_min").value+") {\n                hiba = true;\n            }\n        }\n";
     }
@@ -182,6 +180,8 @@ for (int i = 0; i < "+_("intarr_arrlng").value+"; i++) {\n\
         intarr_code.innerHTML += "        if (!hiba) {\n            if (("+_("intarr_varname").value+"[i] < "+_("intarr_val_min").value+") || ("+_("intarr_varname").value+"[i] > "+_("intarr_val_max").value+")) {\n                hiba = true;\n            }\n        }\n";
     }
     intarr_code.innerHTML += "        if (hiba) {\n\
+            cin.clear();\n\
+            cin.ignore(1000, '\\n');\n\
             cout << \""+_("intarr_errmsg").value+"\" << endl;\n\
         }\n\
     } while (hiba);\n\
