@@ -23,6 +23,11 @@
                     Szeretnél gyorsan túlesni az egészen?<br>
                     Akkor ez a kódgenerátor pont neked való! Válassz egy lehetőséget a felső menüben, és generálj magadnak olyan input bekérdő kódot, amely még inputot is ellenőriz!
                 </div>
+                <div class="tabcnt" data-tab-name="Alapkód">
+                    <input type="checkbox" id="base_tostr" value="True" /> <span class="jsbts" onclick="_('base_tostr').checked = !_('base_tostr').checked;">stringé alakító függvény</span><br>
+                    <button onclick="generateBaseCode()">Kód létrehozása</button>
+                    <pre><code id="base_code" class="hljs cpp"></code></pre>
+                </div>
                 <div class="tabcnt" data-tab-name="string bekérdezés">
                     <input type="text" placeholder="Eredményt tároló változó neve" id="str_varname" />
                     <input type="text" placeholder="Változót kérő üzenet" id="str_premsg" />

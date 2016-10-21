@@ -190,6 +190,41 @@ for (int i = 0; i < "+_("intarr_arrlng").value+"; i++) {\n\
         _("intarr_code").innerHTML = replaceAll("cout", "cerr", _("intarr_code").innerHTML);
     }
     _("intarr_code").innerHTML = replaceAll("{sorszam}", '" << (i+1) << "', _("intarr_code").innerHTML);
+	$('pre code').each(function(i, block) {
+		hljs.highlightBlock(block);
+	});
+}
+
+function generateBaseCode() {
+    base_code.innerHTML = htmlEncode("\
+#include <iostream>\n\
+#include <sstream>\n\
+#include <cstdlib>\n\
+\n\
+using namespace std;\n\
+\n");
+    if (_("base_tostr").checked) {
+        base_code.innerHTML += htmlEncode("\
+template <typename T>\n\
+string toString(const T& item)\n\
+{\n\
+    stringstream ss;\n\
+    ss << item;\n\
+    return ss.str();\n\
+}\n\
+\n");
+    }
+base_code.innerHTML += "int main()\n\
+{\n\
+    return 0;\n\
+}";
+	$('pre code').each(function(i, block) {
+		hljs.highlightBlock(block);
+	});
+}
+
+function htmlEncode(value){
+  return $('<div/>').text(value).html();
 }
 
 function replaceAll(o, n, str) {
