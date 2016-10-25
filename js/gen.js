@@ -42,7 +42,13 @@ $(function() {
         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
     }
     tabs.generate();
+    setTimeout(hideLoading, 1000);
 });
+
+function hideLoading() {
+    $(".loading").hide();
+}
+
 function str_arraycheck_change() {
     if (_("str_arraycheck").checked) {
         _("str_arraydata").className = "";
