@@ -105,3 +105,9 @@ button {
 button:hover {
     background-color: #094E83;
 }
+
+.center{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
