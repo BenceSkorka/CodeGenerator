@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>C++ kód generátor</title>
-        <meta charset="UTF-8" />
+        <meta charset="utf-8" />
         
         <link rel="stylesheet" type="text/css" href="css/page.css" />
         
@@ -9,15 +10,15 @@
         <script src="js/gen.js" type="application/javascript"></script>
         
         <script async defer src="https://buttons.github.io/buttons.js"></script>
-		
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
     </head>
-    <body>
+    <body lang="hu">
         <div class="loading">
             <span class="s1">{</span><span class="s2">}</span>
         </div>
-        <div class="content">
+        <main class="content">
             <h1>Kódgenerátor</h1>
             <div class="tabbox">
                 <div class="tabcnt" data-tab-name="Üdvözlet">
@@ -38,9 +39,9 @@
                     <div id="str_arraydata" class="hidden">
                         <input type="text" placeholder="Tömb változó neve" id="str_arrayname" />
                         <input type="text" placeholder="Tömb hossza (változó VAGY egy egész szám)" id="str_arraymax" />
-						<input type="text" placeholder="Hibás bemenet esetén kiírt üzenet" id="str_errmsg" />
-						<input type="checkbox" id="str_arrayprint" value="True" /> <span class="jsbts" onclick="_('str_arrayprint').checked = !_('str_arrayprint').checked;">Kiírja e a lehetőségeket?</span><br>
-						<input type="checkbox" id="str_returnint" value="True" /> <span class="jsbts" onclick="_('str_returnint').checked = !_('str_returnint').checked;">A tömbben lévő sorszámot adja vissza, ne a beírt szöveget</span><br>
+                        <input type="text" placeholder="Hibás bemenet esetén kiírt üzenet" id="str_errmsg" />
+                        <input type="checkbox" id="str_arrayprint" value="True" /> <span class="jsbts" onclick="_('str_arrayprint').checked = !_('str_arrayprint').checked;">Kiírja e a lehetőségeket?</span><br>
+                        <input type="checkbox" id="str_returnint" value="True" /> <span class="jsbts" onclick="_('str_returnint').checked = !_('str_returnint').checked;">A tömbben lévő sorszámot adja vissza, ne a beírt szöveget</span><br>
                     </div>
                     <input type="checkbox" id="str_cerr" value="True" /> <span class="jsbts" onclick="_('str_cerr').checked = !_('str_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
                     <button onclick="generateStringCode()">Kód létrehozása</button>
@@ -54,7 +55,7 @@
                     <input type="text" placeholder="Minimális érték (változó VAGY egy egész szám) (üresen hagyva: nincs min érték)" id="int_val_min" />
                     <input type="checkbox" id="int_cerr" value="True" /> <span class="jsbts" onclick="_('int_cerr').checked = !_('int_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
                     <button onclick="generateIntCode()">Kód létrehozása</button>
-					<pre><code id="int_code" class="hljs cpp"></code></pre>
+                    <pre><code id="int_code" class="hljs cpp"></code></pre>
                 </div>
                 <div class="tabcnt" data-tab-name="Tömb generátor">
                     <input type="text" placeholder="Tömb neve" id="arr_varname" />
@@ -67,7 +68,7 @@
                         <option value="months">A hónapok</option>
                     </select>
                     <button onclick="generateArrCode()">Kód létrehozása</button>
-					<pre><code id="arr_code" class="hljs cpp"></code></pre>
+                    <pre><code id="arr_code" class="hljs cpp"></code></pre>
                 </div>
                 <div class="tabcnt" data-tab-name="int bekérdezés tömbbe">
                     <input type="text" placeholder="Eredményt tároló tömb neve" id="intarr_varname" />
@@ -78,23 +79,23 @@
                     <input type="text" placeholder="Minimális érték (változó VAGY egy egész szám) (üresen hagyva: nincs min érték)" id="intarr_val_min" />
                     <input type="checkbox" id="intarr_cerr" value="True" /> <span class="jsbts" onclick="_('intarr_cerr').checked = !_('intarr_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
                     <button onclick="generateIntArrCode()">Kód létrehozása</button>
-					<pre><code id="intarr_code" class="hljs cpp"></code></pre>
+                    <pre><code id="intarr_code" class="hljs cpp"></code></pre>
                 </div>
             </div>
-			<br>
-			<center>
-				<!-- Place this tag where you want the button to render. -->
-				<a class="github-button" href="https://github.com/SkorkaBence/CodeGenerator" data-style="mega" data-count-href="/SkorkaBence/CodeGenerator/watchers" data-count-api="/repos/SkorkaBence/CodeGenerator#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch SkorkaBence/CodeGenerator on GitHub">Watch</a><br>
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- Cpp CodeGen -->
-				<ins class="adsbygoogle"
-					 style="display:inline-block;width:728px;height:90px"
-					 data-ad-client="ca-pub-7447731373029635"
-					 data-ad-slot="3910575071"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-			</center>
-        </div>
+            <br>
+            <div class="center">
+                <!-- Place this tag where you want the button to render. -->
+                <a class="github-button" href="https://github.com/SkorkaBence/CodeGenerator" data-style="mega" data-count-href="/SkorkaBence/CodeGenerator/watchers" data-count-api="/repos/SkorkaBence/CodeGenerator#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch SkorkaBence/CodeGenerator on GitHub">Watch</a><br>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Cpp CodeGen -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-7447731373029635"
+                     data-ad-slot="3910575071"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </main>
     </body>
 </html>
