@@ -13,7 +13,7 @@ tabs = {
             $( this ).children( ".tabcnt" ).each(function(index) {
                 console.log("tabcnt...");
                 var tab = document.createElement("div");
-                tab.className = "tabbtn";
+                tab.className = "tabbtn csf-wave-button";
                 tab.innerHTML = $( this ).attr("data-tab-name");
                 $( this ).attr("id", "tab-content-" + tabs.counter);
                 tab.id = "tab-button-" + tabs.counter;
@@ -23,15 +23,16 @@ tabs = {
                 tabs.counter++;
             });
         });
+        csfLoadVaveButtons();
         tabs.choose(0);
     },
     choose: function (t) {
         for (var i = 0; i < tabs.counter; i++) {
             _("tab-content-" + i).className = "tabcnt hidden";
-            _("tab-button-" + i).className = "tabbtn";
+            _("tab-button-" + i).className = "tabbtn csf-wave-button";
         }
         _("tab-content-" + t).className = "tabcnt";
-        _("tab-button-" + t).className = "tabbtn selected";
+        _("tab-button-" + t).className = "tabbtn csf-wave-button selected";
         $( ".tabhead" ).each(function(index) {
             $( this ).children( ".tabbtn" ).last().addClass("endline");
         });

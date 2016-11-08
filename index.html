@@ -8,6 +8,10 @@
         <link rel="stylesheet" type="text/css" href="css/page.css" />
         
         <script src="js/jquery-3.1.1.min.js" type="application/javascript"></script>
+        
+        <link rel="stylesheet" type="text/css" href="https://csfcloud.com/csf/ProgramAPI/bin/CSF.css">
+        <script type="text/javascript" src="https://csfcloud.com/csf/ProgramAPI/bin/CSF.js"></script>
+        
         <script src="js/gen.js" type="application/javascript"></script>
         
         <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -30,7 +34,7 @@
                 </div>
                 <div class="tabcnt" data-tab-name="Alapkód">
                     <input type="checkbox" id="base_tostr" value="True" /> <span class="jsbts" onclick="_('base_tostr').checked = !_('base_tostr').checked;">stringé alakító függvény</span><br>
-                    <button onclick="generateBaseCode()">Kód létrehozása</button>
+                    <button onclick="generateBaseCode()" class="csf-wave-button">Kód létrehozása</button>
                     <pre><code id="base_code" class="hljs cpp"></code></pre>
                 </div>
                 <div class="tabcnt" data-tab-name="string bekérdezés">
@@ -45,7 +49,7 @@
                         <input type="checkbox" id="str_returnint" value="True" /> <span class="jsbts" onclick="_('str_returnint').checked = !_('str_returnint').checked;">A tömbben lévő sorszámot adja vissza, ne a beírt szöveget</span><br>
                     </div>
                     <input type="checkbox" id="str_cerr" value="True" /> <span class="jsbts" onclick="_('str_cerr').checked = !_('str_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
-                    <button onclick="generateStringCode()">Kód létrehozása</button>
+                    <button onclick="generateStringCode()" class="csf-wave-button">Kód létrehozása</button>
                     <pre><code id="str_code" class="hljs cpp"></code></pre>
                 </div>
                 <div class="tabcnt" data-tab-name="int bekérdezés">
@@ -55,7 +59,7 @@
                     <input type="text" placeholder="Maximális érték (változó VAGY egy egész szám) (üresen hagyva: nincs max érték)" id="int_val_max" />
                     <input type="text" placeholder="Minimális érték (változó VAGY egy egész szám) (üresen hagyva: nincs min érték)" id="int_val_min" />
                     <input type="checkbox" id="int_cerr" value="True" /> <span class="jsbts" onclick="_('int_cerr').checked = !_('int_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
-                    <button onclick="generateIntCode()">Kód létrehozása</button>
+                    <button onclick="generateIntCode()" class="csf-wave-button">Kód létrehozása</button>
                     <pre><code id="int_code" class="hljs cpp"></code></pre>
                 </div>
                 <div class="tabcnt" data-tab-name="Tömb generátor">
@@ -68,7 +72,7 @@
                         <option value="days">A hét napjai</option>
                         <option value="months">A hónapok</option>
                     </select>
-                    <button onclick="generateArrCode()">Kód létrehozása</button>
+                    <button onclick="generateArrCode()" class="csf-wave-button">Kód létrehozása</button>
                     <pre><code id="arr_code" class="hljs cpp"></code></pre>
                 </div>
                 <div class="tabcnt" data-tab-name="int bekérdezés tömbbe">
@@ -79,7 +83,7 @@
                     <input type="text" placeholder="Maximális érték (változó VAGY egy egész szám) (üresen hagyva: nincs max érték)" id="intarr_val_max" />
                     <input type="text" placeholder="Minimális érték (változó VAGY egy egész szám) (üresen hagyva: nincs min érték)" id="intarr_val_min" />
                     <input type="checkbox" id="intarr_cerr" value="True" /> <span class="jsbts" onclick="_('intarr_cerr').checked = !_('intarr_cerr').checked;">Használjon cerr kimenetet cout helyett</span>
-                    <button onclick="generateIntArrCode()">Kód létrehozása</button>
+                    <button onclick="generateIntArrCode()" class="csf-wave-button">Kód létrehozása</button>
                     <pre><code id="intarr_code" class="hljs cpp"></code></pre>
                 </div>
             </div>
