@@ -8,6 +8,9 @@ html, body {
     font-family: "MagdaCleanMono-Regular";
     color: #66A3D2;
 }
+a {
+    color: #66A3D2;
+}
 .content {
     position: absolute;
     width: calc(100% - 60px);
